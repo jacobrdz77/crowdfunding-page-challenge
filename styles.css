@@ -1,0 +1,419 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+:root {
+  --soft-red: hsl(5, 85%, 63%);
+  --soft-orange: hsl(35, 77%, 62%);
+  --light-gray-blue: hsl(233, 8%, 79%);
+  --dark-gray-blue: hsl(236, 13%, 42%);
+  --dark-blue: hsl(240, 100%, 5%);
+}
+
+/*** MODERN CSS RESET ***/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: hsl(36, 100%, 99%);
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+p {
+  font-size: 15px;
+}
+
+body {
+  width: 92%;
+  margin: 0 auto;
+}
+
+/*** HEADER SECTION ***/
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.logo {
+  width: 50px;
+}
+
+.nav {
+  transform: translateX(400px);
+  transition: 0.2s ease-in;
+  background-color: hsl(36, 100%, 99%);
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 5;
+  height: 100vh;
+  width: 250px;
+  font-size: larger;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 25px;
+  margin: 0;
+  margin-top: 150px;
+}
+
+.nav__list a {
+  text-decoration: none;
+  color: var(--dark-gray-blue);
+}
+
+.nav--mobile__backdrop {
+  display: none;
+  background-color: black;
+  opacity: 0.6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.nav--mobile--state-open {
+  transform: translateX(0px);
+  transition: 0.2s ease-in-out;
+}
+
+.nav--mobile__backdrop--state-open {
+  display: block;
+}
+
+.nav__menu-close {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+
+/*** POPULAR BLOG SECTION ***/
+.popular-blog {
+  margin-bottom: 60px;
+}
+
+.popular-blog__image {
+  display: none;
+}
+
+.popular-blog__image-mobile {
+  margin-bottom: 25px;
+}
+
+.popular-blog-text__title {
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 40px;
+}
+
+.popular-blog-text__description p {
+  color: var(--dark-gray-blue);
+  margin: 20px 0 25px 0;
+}
+
+.button {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 4px;
+  background-color: var(--soft-red);
+  border: 0;
+  text-transform: uppercase;
+  padding: 15px 30px 15px 30px;
+}
+
+/*** NEW BLOGS SECTION  ***/
+.new-blogs {
+  margin-bottom: 70px;
+  color: white;
+  background-color: var(--dark-blue);
+  padding: 20px 25px 25px 25px;
+}
+
+.new-blogs > h2 {
+  color: var(--soft-orange);
+  font-size: 2.2rem;
+}
+
+.new-blogs__blog {
+  padding: 30px 0 30px 0;
+  border-bottom: 0.1px solid var(--light-gray-blue);
+}
+
+.new-blogs__blog > h3 {
+  letter-spacing: 1px;
+}
+
+.new-blogs__blog:first-of-type {
+  padding-top: 25px;
+}
+
+.new-blogs__blog:last-of-type {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.new-blogs__blog p {
+  color: var(--light-gray-blue);
+  line-height: 1.7rem;
+}
+
+/*** TOP 3 BLOGS ***/
+.three-blogs {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
+  gap: 35px;
+  margin-bottom: 2rem;
+}
+
+.three-blogs__blog {
+  display: flex;
+  gap: 25px;
+}
+
+.three-blogs__blog img {
+  object-fit: cover;
+  max-width: 100px;
+}
+
+.three-blogs__blog div {
+  max-width: 210px;
+}
+
+.three-blogs__blog h4 {
+  font-size: 2rem;
+  color: var(--light-gray-blue);
+}
+
+.three-blogs__blog h5 {
+  font-size: 1rem;
+  font-weight: 800;
+  padding-bottom: 8px;
+}
+
+/* iPad screens */
+@media only screen and (min-width: 768px) {
+  body {
+    width: 85%;
+  }
+  .header {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .popular-blog__image {
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  .popular-blog__image-mobile {
+    display: none;
+  }
+}
+
+/* Laptops */
+@media only screen and (min-width: 900px) and (max-width: 1599px) {
+  body {
+    width: 85%;
+    margin: 0 auto;
+  }
+  .header {
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  /* Get rid of mobile nav */
+  .hamburger {
+    display: none;
+  }
+
+  .nav {
+    transform: translateX(0px);
+    transition: none;
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+
+  .nav__list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0px;
+    margin: 0;
+    gap: 30px;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--light-gray-blue);
+  }
+  .nav__menu-close {
+    display: none;
+  }
+
+  .three-blogs {
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 35px;
+    margin-bottom: 2rem;
+  }
+}
+
+/* The rest of the screens */
+@media screen and (min-width: 1600px) {
+  body {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .header {
+    margin: 80px 0 50px 0;
+  }
+
+  .logo {
+    width: auto;
+  }
+
+  /* Get rid of mobile nav */
+  .hamburger {
+    display: none;
+  }
+
+  .nav {
+    transform: translateX(0px);
+    transition: none;
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+
+  .nav__list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0px;
+    margin: 0;
+    gap: 40px;
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--light-gray-blue);
+  }
+  .nav__menu-close {
+    display: none;
+  }
+
+  /* Create the grid of main */
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.8rem;
+  }
+
+  .popular-blog {
+    grid-column: 1/3;
+  }
+  .three-blogs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+
+  .popular-blog__image {
+    margin-bottom: 30px;
+  }
+
+  .popular-blog-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .popular-blog-text__title {
+    /* padding-right: 4rem; */
+    font-size: 55px;
+    font-weight: 900;
+    line-height: 55px;
+  }
+  .popular-blog-text__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popular-blog-text__description p {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+}
