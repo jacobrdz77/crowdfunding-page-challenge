@@ -1,13 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
 :root {
   --soft-red: hsl(5, 85%, 63%);
   --soft-orange: hsl(35, 77%, 62%);
@@ -89,6 +80,15 @@ p {
 body {
   width: 92%;
   margin: 0 auto;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--soft-red);
 }
 
 /*** HEADER SECTION ***/
@@ -239,7 +239,7 @@ body {
   grid-template-columns: 1fr;
   grid-auto-flow: row;
   gap: 35px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .three-blogs__blog {
@@ -252,19 +252,19 @@ body {
   max-width: 100px;
 }
 
-.three-blogs__blog div {
-  max-width: 210px;
-}
-
-.three-blogs__blog h4 {
+.three-blogs__blog__info h4 {
   font-size: 2rem;
   color: var(--light-gray-blue);
 }
 
-.three-blogs__blog h5 {
+.three-blogs__blog__info h5 {
   font-size: 1rem;
   font-weight: 800;
   padding-bottom: 8px;
+}
+
+.three-blogs__blog__info p {
+  color: var(--dark-gray-blue);
 }
 
 /* iPad screens */
@@ -287,14 +287,14 @@ body {
   }
 }
 
-/* Laptops */
+/* The rest of the screens */
 @media only screen and (min-width: 1100px) {
   body {
-    max-width: 1100px;
+    max-width: 1090px;
     margin: 0 auto;
   }
   .header {
-    margin: 80px 0 50px 0;
+    margin: 85px 0 50px 0;
   }
 
   .logo {
